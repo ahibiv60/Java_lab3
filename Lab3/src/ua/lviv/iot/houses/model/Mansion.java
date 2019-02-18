@@ -1,12 +1,10 @@
 package ua.lviv.iot.houses.model;
 
-public class Mansion extends House 
-{
+public class Mansion extends House {
 	private boolean waterSupply;
 	private int floors;
 	
-	public Mansion(double area, int price, int rating, String adress, int numberOfRooms, String city) 
-	{
+	public Mansion(double area, int price, int rating, String adress, int numberOfRooms, String city) {
 		super(area, price, rating, adress, numberOfRooms, city);
 	}
 

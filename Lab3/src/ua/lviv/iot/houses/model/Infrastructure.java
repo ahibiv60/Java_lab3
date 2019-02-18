@@ -2,13 +2,11 @@ package ua.lviv.iot.houses.model;
 
 import java.awt.List;
 
-public class Infrastructure extends House 
-{
+public class Infrastructure extends House {
 	private boolean parking;
 	private List LocatedNear;
 
-	public Infrastructure(double area, int price, int rating, String adress, int numberOfRooms, String city) 
-	{
+	public Infrastructure(double area, int price, int rating, String adress, int numberOfRooms, String city) {
 		super(area, price, rating, adress, numberOfRooms, city);
 	}
 

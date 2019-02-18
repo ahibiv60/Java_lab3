@@ -1,11 +1,9 @@
 package ua.lviv.iot.houses.model;
 
-public class Penthouse extends House
-{
+public class Penthouse extends House{
 	private boolean terrace;
 
-	public Penthouse(double area, int price, int rating, String adress, int numberOfRooms, String city) 
-	{
+	public Penthouse(double area, int price, int rating, String adress, int numberOfRooms, String city) {
 		super(area, price, rating, adress, numberOfRooms, city);
 	}
 
