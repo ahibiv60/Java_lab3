@@ -1,7 +1,6 @@
 package ua.lviv.iot.houses.model;
 
-public class House 
-{
+public class House {
 	private double area;
 	private int price;
 	private int rating;
@@ -11,9 +10,7 @@ public class House
 	private Heating heating;
 	private AvailableHouse availableHouse;
 	
-	public House() 
-	{
-		
+	public House() {
 	}
 
 	public House(double area, int price, int rating, String adress, int numberOfRooms, String city) {
@@ -24,8 +21,7 @@ public class House
 		this.numberOfRooms = numberOfRooms;
 		this.city = city;
 	}
-	public String toString()
-	{
+	public String toString(){
 		return String.format("Adress: %s\nPrice: %d\nRating: %d\nArea: %f\nNumber of Rooms: %d\nCity: %s\n", adress, price, rating, area, numberOfRooms, city);
 	}
 
