@@ -1,0 +1,12 @@
+ua\lviv\iot\houses\model\House.class
+ua\lviv\iot\houses\manager\HouseManager.class
+ua\lviv\iot\houses\manager\Main.class
+ua\lviv\iot\houses\manager\HouseManagerImpl.class
+ua\lviv\iot\houses\model\Apartment.class
+ua\lviv\iot\houses\model\LocatedNear.class
+ua\lviv\iot\houses\model\Heating.class
+ua\lviv\iot\houses\model\Infrastructure.class
+ua\lviv\iot\houses\model\Penthouse.class
+ua\lviv\iot\App.class
+ua\lviv\iot\houses\model\Mansion.class
+ua\lviv\iot\houses\model\AvailableHouse.class
