@@ -6,25 +6,27 @@ public class Infrastructure extends House {
     private boolean parking;
     private List LocatedNear;
 
-    public Infrastructure(double area, int price, int rating, String adress, int numberOfRooms, String city) {
-<span class="nc" id="L10">        super(area, price, rating, adress, numberOfRooms, city);</span>
-<span class="nc" id="L11">    }</span>
-
-    public boolean isParking() {
-<span class="nc" id="L14">        return parking;</span>
-    }
-
-    public void setParking(boolean parking) {
-<span class="nc" id="L18">        this.parking = parking;</span>
-<span class="nc" id="L19">    }</span>
-
     public List getLocatedNear() {
-<span class="nc" id="L22">        return LocatedNear;</span>
+<span class="nc" id="L10">        return LocatedNear;</span>
     }
 
     public void setLocatedNear(List locatedNear) {
-<span class="nc" id="L26">        LocatedNear = locatedNear;</span>
+<span class="nc" id="L14">        LocatedNear = locatedNear;</span>
+<span class="nc" id="L15">    }</span>
+
+    public Infrastructure(double area, int price, int rating, String adress, int numberOfRooms, String city) {
+<span class="nc" id="L18">        super(area, price, rating, adress, numberOfRooms, city);</span>
+<span class="nc" id="L19">    }</span>
+
+    public boolean isParking() {
+<span class="nc" id="L22">        return parking;</span>
+    }
+
+    public void setParking(boolean parking) {
+<span class="nc" id="L26">        this.parking = parking;</span>
 <span class="nc" id="L27">    }</span>
+
+    
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

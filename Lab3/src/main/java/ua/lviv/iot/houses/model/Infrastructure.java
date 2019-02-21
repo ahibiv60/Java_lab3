@@ -6,6 +6,14 @@ public class Infrastructure extends House {
     private boolean parking;
     private List LocatedNear;
 
+    public List getLocatedNear() {
+        return LocatedNear;
+    }
+
+    public void setLocatedNear(List locatedNear) {
+        LocatedNear = locatedNear;
+    }
+
     public Infrastructure(double area, int price, int rating, String adress, int numberOfRooms, String city) {
         super(area, price, rating, adress, numberOfRooms, city);
     }
@@ -18,12 +26,6 @@ public class Infrastructure extends House {
         this.parking = parking;
     }
 
-    public List getLocatedNear() {
-        return LocatedNear;
-    }
-
-    public void setLocatedNear(List locatedNear) {
-        LocatedNear = locatedNear;
-    }
+    
 
 }
