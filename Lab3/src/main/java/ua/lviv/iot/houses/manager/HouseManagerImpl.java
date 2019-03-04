@@ -1,7 +1,6 @@
 package ua.lviv.iot.houses.manager;
 
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 
 import ua.lviv.iot.houses.model.House;

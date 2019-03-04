@@ -14,7 +14,7 @@ import ua.lviv.iot.houses.model.Penthouse;
 public class Main {
 
     public static void main(String[] args) {
-        EnumSet<LocatedNear> Near = EnumSet.allOf(LocatedNear.class);
+        EnumSet<LocatedNear> near = EnumSet.allOf(LocatedNear.class);
         LinkedList<House> list = new LinkedList<House>();
         HouseManagerImpl manager = new HouseManagerImpl();
 
@@ -70,7 +70,7 @@ public class Main {
         House result = houses.stream().filter(x -> "Lviv".equals(x.getCity())).findAny().orElse(null);
 
         System.out.println("\n" + result);
-        System.out.println("Located Near : " + Near);
+        System.out.println("Located Near : " + near);
     }
 
 }

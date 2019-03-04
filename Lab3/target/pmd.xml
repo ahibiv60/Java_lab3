@@ -2,10 +2,5 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.8.0" timestamp="2019-02-22T00:10:43.627">
-<file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\manager\HouseManagerImpl.java">
-<violation beginline="4" endline="4" begincolumn="1" endcolumn="28" rule="UnusedImports" ruleset="Best Practices" package="ua.lviv.iot.houses.manager" class="HouseManagerImpl" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
-Avoid unused imports such as 'java.util.LinkedList'
-</violation>
-</file>
+    version="6.8.0" timestamp="2019-02-22T12:07:04.806">
 </pmd>
