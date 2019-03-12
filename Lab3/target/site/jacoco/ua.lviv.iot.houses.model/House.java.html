@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>House.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">home</a> &gt; <a href="index.source.html" class="el_package">ua.lviv.iot.houses.model</a> &gt; <span class="el_source">House.java</span></div><h1>House.java</h1><pre class="source lang-java linenums">package ua.lviv.iot.houses.model;
+
+public class House {
+    private double area;
+    private int price;
+    private int rating;
+    private String adress;
+    private int numberOfRooms;
+    private String city;
+    private Heating heating;
+    private AvailableHouse availableHouse;
+
+<span class="nc" id="L13">    public House() {</span>
+<span class="nc" id="L14">    }</span>
+
+<span class="nc" id="L16">    public House(double area, int price, int rating, String adress, int numberOfRooms, String city) {</span>
+<span class="nc" id="L17">        this.area = area;</span>
+<span class="nc" id="L18">        this.price = price;</span>
+<span class="nc" id="L19">        this.rating = rating;</span>
+<span class="nc" id="L20">        this.adress = adress;</span>
+<span class="nc" id="L21">        this.numberOfRooms = numberOfRooms;</span>
+<span class="nc" id="L22">        this.city = city;</span>
+<span class="nc" id="L23">    }</span>
+
+    public String toString() {
+<span class="nc" id="L26">        return String.format(&quot;Adress: %s%nPrice: %d%nRating: %d%nArea: %f%nNumber of Rooms: %d%nCity: %s%n&quot;, adress,</span>
+<span class="nc" id="L27">                price, rating, area, numberOfRooms, city);</span>
+    }
+
+    public double getArea() {
+<span class="nc" id="L31">        return area;</span>
+    }
+
+    public void setArea(double area) {
+<span class="nc" id="L35">        this.area = area;</span>
+<span class="nc" id="L36">    }</span>
+
+    public int getPrice() {
+<span class="nc" id="L39">        return price;</span>
+    }
+
+    public void setPrice(int price) {
+<span class="nc" id="L43">        this.price = price;</span>
+<span class="nc" id="L44">    }</span>
+
+    public int getRating() {
+<span class="nc" id="L47">        return rating;</span>
+    }
+
+    public void setRating(int rating) {
+<span class="nc" id="L51">        this.rating = rating;</span>
+<span class="nc" id="L52">    }</span>
+
+    public String getAdress() {
+<span class="nc" id="L55">        return adress;</span>
+    }
+
+    public void setAdress(String adress) {
+<span class="nc" id="L59">        this.adress = adress;</span>
+<span class="nc" id="L60">    }</span>
+
+    public int getNumberOfRooms() {
+<span class="nc" id="L63">        return numberOfRooms;</span>
+    }
+
+    public void setNumberOfRooms(int numberOfRooms) {
+<span class="nc" id="L67">        this.numberOfRooms = numberOfRooms;</span>
+<span class="nc" id="L68">    }</span>
+
+    public String getCity() {
+<span class="nc" id="L71">        return city;</span>
+    }
+
+    public void setCity(String city) {
+<span class="nc" id="L75">        this.city = city;</span>
+<span class="nc" id="L76">    }</span>
+
+    public Heating getHeating() {
+<span class="nc" id="L79">        return heating;</span>
+    }
+
+    public void setHeating(Heating heating) {
+<span class="nc" id="L83">        this.heating = heating;</span>
+<span class="nc" id="L84">    }</span>
+
+    public AvailableHouse getAvailableHouse() {
+<span class="nc" id="L87">        return availableHouse;</span>
+    }
+
+    public void setAvailableHouse(AvailableHouse availableHouse) {
+<span class="nc" id="L91">        this.availableHouse = availableHouse;</span>
+<span class="nc" id="L92">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
