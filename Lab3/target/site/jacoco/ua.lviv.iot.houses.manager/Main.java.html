@@ -10,68 +10,69 @@ import ua.lviv.iot.houses.model.House;
 import ua.lviv.iot.houses.model.LocatedNear;
 import ua.lviv.iot.houses.model.Mansion;
 import ua.lviv.iot.houses.model.Penthouse;
+import ua.lviv.iot.houses.model.SortOrder;
 
-<span class="nc" id="L14">public class Main {</span>
+<span class="nc" id="L15">public class Main {</span>
 
     public static void main(String[] args) {
-<span class="nc" id="L17">        EnumSet&lt;LocatedNear&gt; Near = EnumSet.allOf(LocatedNear.class);</span>
-<span class="nc" id="L18">        LinkedList&lt;House&gt; list = new LinkedList&lt;House&gt;();</span>
-<span class="nc" id="L19">        HouseManagerImpl manager = new HouseManagerImpl();</span>
+<span class="nc" id="L18">        EnumSet&lt;LocatedNear&gt; near = EnumSet.allOf(LocatedNear.class);</span>
+<span class="nc" id="L19">        LinkedList&lt;House&gt; list = new LinkedList&lt;House&gt;();</span>
+<span class="nc" id="L20">        HouseManagerImpl manager = new HouseManagerImpl();</span>
 
-<span class="nc" id="L21">        Mansion mansion = new Mansion(155, 11465432, 5, &quot;Warsaw, 5&quot;, 6, &quot;Lviv&quot;);</span>
-<span class="nc" id="L22">        Penthouse penthouse = new Penthouse(136, 2383150, 4, &quot;Charles Michelosh, 7&quot;, 4, &quot;Kiev&quot;);</span>
-<span class="nc" id="L23">        Apartment apartment = new Apartment(100, 530400, 3, &quot;Solomyanska, 20A&quot;, 2, &quot;Odessa&quot;);</span>
+<span class="nc" id="L22">        Mansion mansion = new Mansion(155, 11465432, 5, &quot;Warsaw, 5&quot;, 6, &quot;Lviv&quot;);</span>
+<span class="nc" id="L23">        Penthouse penthouse = new Penthouse(136, 2383150, 4, &quot;Charles Michelosh, 7&quot;, 4, &quot;Kiev&quot;);</span>
+<span class="nc" id="L24">        Apartment apartment = new Apartment(100, 530400, 3, &quot;Solomyanska, 20A&quot;, 2, &quot;Odessa&quot;);</span>
 
-<span class="nc" id="L25">        List&lt;House&gt; houses = Arrays.asList(new House(155, 11465432, 5, &quot;Warsaw, 5&quot;, 6, &quot;Lviv&quot;),</span>
-<span class="nc" id="L26">                new House(136, 2383150, 4, &quot;Charles Michelosh, 7&quot;, 4, &quot;Kiev&quot;),</span>
-<span class="nc" id="L27">                new House(100, 530400, 3, &quot;Solomyanska, 20A&quot;, 2, &quot;Odessa&quot;));</span>
+<span class="nc" id="L26">        List&lt;House&gt; houses = Arrays.asList(new House(155, 11465432, 5, &quot;Warsaw, 5&quot;, 6, &quot;Lviv&quot;),</span>
+<span class="nc" id="L27">                new House(136, 2383150, 4, &quot;Charles Michelosh, 7&quot;, 4, &quot;Kiev&quot;),</span>
+<span class="nc" id="L28">                new House(100, 530400, 3, &quot;Solomyanska, 20A&quot;, 2, &quot;Odessa&quot;));</span>
 
-<span class="nc" id="L29">        list.add(mansion);</span>
-<span class="nc" id="L30">        list.add(penthouse);</span>
-<span class="nc" id="L31">        list.add(apartment);</span>
+<span class="nc" id="L30">        list.add(mansion);</span>
+<span class="nc" id="L31">        list.add(penthouse);</span>
+<span class="nc" id="L32">        list.add(apartment);</span>
 
-<span class="nc" id="L33">        System.out.println(&quot;Homes list (&quot; + list.size() + &quot;):&quot;);</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
-<span class="nc" id="L35">            System.out.println(list.get(i).getAdress());</span>
+<span class="nc" id="L34">        System.out.println(&quot;Homes list (&quot; + list.size() + &quot;):&quot;);</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="nc" id="L36">            System.out.println(list.get(i).getAdress());</span>
         }
 
-<span class="nc" id="L38">        manager.sortByArea(list, true);</span>
+<span class="nc" id="L39">        manager.sortByArea(list, SortOrder.ASCENDING);</span>
 
-<span class="nc" id="L40">        System.out.println(&quot;\n[Ascending]Sort by area:&quot;);</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
-<span class="nc" id="L42">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getArea());</span>
+<span class="nc" id="L41">        System.out.println(&quot;\n[Ascending]Sort by area:&quot;);</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="nc" id="L43">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getArea());</span>
         }
 
-<span class="nc" id="L45">        manager.sortByArea(list, false);</span>
+<span class="nc" id="L46">        manager.sortByArea(list, SortOrder.DESCENDING);</span>
 
-<span class="nc" id="L47">        System.out.println(&quot;\n[Descending]Sort by area:&quot;);</span>
-<span class="nc bnc" id="L48" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
-<span class="nc" id="L49">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getArea());</span>
+<span class="nc" id="L48">        System.out.println(&quot;\n[Descending]Sort by area:&quot;);</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="nc" id="L50">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getArea());</span>
         }
 
-<span class="nc" id="L52">        manager.sortByPrice(list, true);</span>
+<span class="nc" id="L53">        manager.sortByPrice(list, SortOrder.ASCENDING);</span>
 
-<span class="nc" id="L54">        System.out.println(&quot;\n[Ascending]Sort by price:&quot;);</span>
-<span class="nc bnc" id="L55" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
-<span class="nc" id="L56">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getPrice());</span>
+<span class="nc" id="L55">        System.out.println(&quot;\n[Ascending]Sort by price:&quot;);</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="nc" id="L57">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getPrice());</span>
         }
 
-<span class="nc" id="L59">        manager.sortByPrice(list, false);</span>
+<span class="nc" id="L60">        manager.sortByPrice(list, SortOrder.DESCENDING);</span>
 
-<span class="nc" id="L61">        System.out.println(&quot;\n[Descending]Sort by price:&quot;);</span>
-<span class="nc bnc" id="L62" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
-<span class="nc" id="L63">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getPrice());</span>
+<span class="nc" id="L62">        System.out.println(&quot;\n[Descending]Sort by price:&quot;);</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="nc" id="L64">            System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getPrice());</span>
         }
 
-<span class="nc" id="L66">        manager.findPropositionByCity(list, &quot;Lviv&quot;);</span>
+<span class="nc" id="L67">        manager.findPropositionByCity(list, &quot;Lviv&quot;);</span>
 
-<span class="nc" id="L68">        System.out.println(&quot;\nProposition in Lviv:&quot;);</span>
+<span class="nc" id="L69">        System.out.println(&quot;\nProposition in Lviv:&quot;);</span>
 
-<span class="nc" id="L70">        House result = houses.stream().filter(x -&gt; &quot;Lviv&quot;.equals(x.getCity())).findAny().orElse(null);</span>
+<span class="nc" id="L71">        House result = houses.stream().filter(x -&gt; &quot;Lviv&quot;.equals(x.getCity())).findAny().orElse(null);</span>
 
-<span class="nc" id="L72">        System.out.println(&quot;\n&quot; + result);</span>
-<span class="nc" id="L73">        System.out.println(&quot;Located Near : &quot; + Near);</span>
-<span class="nc" id="L74">    }</span>
+<span class="nc" id="L73">        System.out.println(&quot;\n&quot; + result);</span>
+<span class="nc" id="L74">        System.out.println(&quot;Located Near : &quot; + near);</span>
+<span class="nc" id="L75">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

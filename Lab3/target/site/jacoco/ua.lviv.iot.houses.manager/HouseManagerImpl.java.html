@@ -1,43 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HouseManagerImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">home</a> &gt; <a href="index.source.html" class="el_package">ua.lviv.iot.houses.manager</a> &gt; <span class="el_source">HouseManagerImpl.java</span></div><h1>HouseManagerImpl.java</h1><pre class="source lang-java linenums">package ua.lviv.iot.houses.manager;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
 import ua.lviv.iot.houses.model.House;
+import ua.lviv.iot.houses.model.SortOrder;
 
-<span class="nc" id="L9">public class HouseManagerImpl implements HouseManager&lt;Object&gt; {</span>
+<span class="fc" id="L12">public class HouseManagerImpl implements HouseManager&lt;House&gt; {</span>
 
-    // LinkedList&lt;House&gt; list = new LinkedList&lt;House&gt;();
+<span class="fc" id="L14">    private LinkedList&lt;House&gt; list = new LinkedList&lt;House&gt;();</span>
 
-    // true - ascending
-    // false - descending
+<span class="fc" id="L16">    List&lt;House&gt; houses = Arrays.asList(new House(155, 11465432, 5, &quot;Warsaw, 5&quot;, 6, &quot;Lviv&quot;),</span>
+<span class="fc" id="L17">            new House(136, 2383150, 4, &quot;Charles Michelosh, 7&quot;, 4, &quot;Kiev&quot;),</span>
+<span class="fc" id="L18">            new House(100, 530400, 3, &quot;Solomyanska, 20A&quot;, 2, &quot;Odessa&quot;));</span>
 
     @Override
-    public List&lt;House&gt; sortByArea(List&lt;House&gt; list, boolean sortOrder) {
-<span class="nc bnc" id="L18" title="All 2 branches missed.">        if (sortOrder == true) {</span>
-<span class="nc" id="L19">            list.sort(Comparator.comparing(House::getArea));</span>
+    public List&lt;House&gt; sortByArea(List&lt;House&gt; list, SortOrder order) {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (!list.isEmpty()) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            if (order == SortOrder.ASCENDING) {</span>
+<span class="fc" id="L24">                list.sort(Comparator.comparing(House::getArea));</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">            } else if (order == SortOrder.DESCENDING) {</span>
+<span class="fc" id="L26">                list.sort(Comparator.comparing(House::getArea));</span>
+<span class="fc" id="L27">                Collections.reverse(list);</span>
+            }
+<span class="fc" id="L29">        } else {</span>
+<span class="fc" id="L30">            System.out.println(&quot;-&gt; List of houses is empty&quot;);</span>
         }
-<span class="nc bnc" id="L21" title="All 2 branches missed.">        if (sortOrder == false) {</span>
-<span class="nc" id="L22">            list.sort(Comparator.comparing(House::getArea).reversed());</span>
-        }
-<span class="nc" id="L24">        return list;</span>
+<span class="fc" id="L32">        return list;</span>
     }
 
     @Override
-    public List&lt;House&gt; sortByPrice(List&lt;House&gt; list, boolean sortOrder) {
-<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (sortOrder == true) {</span>
-<span class="nc" id="L30">            list.sort(Comparator.comparing(House::getPrice));</span>
+    public List&lt;House&gt; sortByPrice(List&lt;House&gt; list, SortOrder order) {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (!list.isEmpty()) {</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">            if (order == SortOrder.ASCENDING) {</span>
+<span class="fc" id="L39">                list.sort(Comparator.comparing(House::getPrice));</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">            } else if (order == SortOrder.DESCENDING) {</span>
+<span class="fc" id="L41">                list.sort(Comparator.comparing(House::getPrice));</span>
+<span class="fc" id="L42">                Collections.reverse(list);</span>
+            }
+<span class="fc" id="L44">        } else {</span>
+<span class="fc" id="L45">            System.out.println(&quot;-&gt; List of houses is empty&quot;);</span>
         }
-<span class="nc bnc" id="L32" title="All 2 branches missed.">        if (sortOrder == false) {</span>
-<span class="nc" id="L33">            list.sort(Comparator.comparing(House::getPrice).reversed());</span>
-        }
-<span class="nc" id="L35">        return list;</span>
+<span class="fc" id="L47">        return list;</span>
     }
 
     @Override
     public List&lt;House&gt; findPropositionByCity(List&lt;House&gt; list, String city) {
-<span class="nc" id="L40">        return list;</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if (city == &quot;Lviv&quot;) {</span>
+<span class="fc" id="L53">            House result = houses.stream().filter(x -&gt; &quot;Lviv&quot;.equals(x.getCity())).findAny().orElse(null);</span>
+<span class="fc" id="L54">            System.out.println(&quot;\n&quot; + result);</span>
+        }
+
+<span class="fc" id="L57">        return list;</span>
     }
+
+    @Override
+    public void clearHouseList() {
+<span class="fc" id="L62">        list.clear();</span>
+<span class="fc" id="L63">    }</span>
+
+    @Override
+    public void printListOfHouses(String sortedBy) {
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (sortedBy == &quot;area&quot;) {</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">            for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="fc" id="L69">                System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getArea());</span>
+
+            }
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        } else if (sortedBy == &quot;price&quot;) {</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">            for (int i = 0; i &lt; list.size(); i++) {</span>
+<span class="fc" id="L74">                System.out.println(list.get(i).getAdress() + &quot; = &quot; + list.get(i).getPrice());</span>
+
+            }
+<span class="fc" id="L77">        } else {</span>
+<span class="fc" id="L78">            System.out.println(&quot;\nInput Parameter mast be \&quot;area\&quot; or \&quot;price\&quot; (printListOfHouses)&quot;);</span>
+        }
+<span class="fc" id="L80">    }</span>
+
+    public void setNewListOfHouses(LinkedList&lt;House&gt; newList) {
+<span class="fc" id="L83">        setList(newList);</span>
+<span class="fc" id="L84">    }</span>
+
+    public void setList(LinkedList&lt;House&gt; list) {
+<span class="fc" id="L87">        this.list = list;</span>
+<span class="fc" id="L88">    }</span>
+
+    public LinkedList&lt;House&gt; getList() {
+<span class="fc" id="L91">        return list;</span>
+    }
+
+    @Override
+    public void addHouse(House house) {
+<span class="fc" id="L96">        System.out.println(&quot;You added \&quot;&quot; + house.getAdress() + &quot;\&quot; to list of Houses&quot;);</span>
+<span class="fc" id="L97">        list.add(house);</span>
+<span class="fc" id="L98">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

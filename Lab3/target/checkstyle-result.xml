@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.18">
-<file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\App.java">
-</file>
 <file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\manager\HouseManager.java">
 </file>
 <file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\manager\HouseManagerImpl.java">
-</file>
-<file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\manager\Main.java">
 </file>
 <file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\model\Apartment.java">
 </file>
@@ -23,5 +19,7 @@
 <file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\model\Mansion.java">
 </file>
 <file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\model\Penthouse.java">
+</file>
+<file name="C:\Users\Farmose\Desktop\github\Java_lab3\Lab3\src\main\java\ua\lviv\iot\houses\model\SortOrder.java">
 </file>
 </checkstyle>
