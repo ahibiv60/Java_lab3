@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import ua.lviv.iot.houses.model.House;
 import ua.lviv.iot.houses.model.SortOrder;
@@ -19,42 +20,28 @@ public class HouseManagerImpl implements HouseManager<House> {
 
     @Override
     public List<House> sortByArea(List<House> list, SortOrder order) {
-        if (!list.isEmpty()) {
-            if (order == SortOrder.ASCENDING) {
-                list.sort(Comparator.comparing(House::getArea));
-            } else if (order == SortOrder.DESCENDING) {
-                list.sort(Comparator.comparing(House::getArea));
-                Collections.reverse(list);
-            }
+        if (order == SortOrder.ASCENDING) {
+            list.sort(Comparator.comparing(House::getArea));
         } else {
-            System.out.println("-> List of houses is empty");
+            Collections.sort(list, Comparator.comparing(House::getArea).reversed());
         }
+
         return list;
     }
 
     @Override
     public List<House> sortByPrice(List<House> list, SortOrder order) {
-        if (!list.isEmpty()) {
-            if (order == SortOrder.ASCENDING) {
-                list.sort(Comparator.comparing(House::getPrice));
-            } else if (order == SortOrder.DESCENDING) {
-                list.sort(Comparator.comparing(House::getPrice));
-                Collections.reverse(list);
-            }
+        if (order == SortOrder.ASCENDING) {
+            list.sort(Comparator.comparing(House::getPrice));
         } else {
-            System.out.println("-> List of houses is empty");
+            Collections.sort(list, Comparator.comparing(House::getPrice).reversed());
         }
         return list;
     }
 
     @Override
-    public List<House> findPropositionByCity(List<House> list, String city) {
-        if (city == "Lviv") {
-            House result = houses.stream().filter(x -> "Lviv".equals(x.getCity())).findAny().orElse(null);
-            System.out.println("\n" + result);
-        }
-
-        return list;
+    public List<House> findPropositionByCity(List<House> list, final String city) {
+        return houses.stream().filter(x -> city.equals(x.getCity())).collect(Collectors.toList());
     }
 
     @Override
