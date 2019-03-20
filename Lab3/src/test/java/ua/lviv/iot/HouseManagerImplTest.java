@@ -1,5 +1,6 @@
 package ua.lviv.iot;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,11 +11,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.Assert;
 import ua.lviv.iot.houses.manager.HouseManager;
 import ua.lviv.iot.houses.manager.HouseManagerImpl;
+import ua.lviv.iot.houses.manager.HouseWriter;
 import ua.lviv.iot.houses.model.Apartment;
 import ua.lviv.iot.houses.model.AvailableHouse;
+import ua.lviv.iot.houses.model.Heating;
 import ua.lviv.iot.houses.model.House;
 import ua.lviv.iot.houses.model.LocatedNear;
 import ua.lviv.iot.houses.model.Mansion;
@@ -37,6 +39,10 @@ class HouseManagerImplTest {
         manager.addHouse(new Mansion(155, 11465432, 5, "Warsaw, 5", 6, "Lviv"));
         manager.addHouse(new Penthouse(136, 2383150, 4, "Charles Michelosh, 7", 4, "Kiev"));
         manager.addHouse(new Apartment(100, 530400, 3, "Solomyanska, 20A", 2, "Odessa"));
+
+        File file = new File("C:\\Users\\Farmose\\Desktop\\github\\Java_lab3\\Lab3\\houses.csv");
+        HouseWriter.writeToFile(manager.getList());
+        Assertions.assertTrue(file.exists());
     }
 
     @Test
@@ -44,9 +50,6 @@ class HouseManagerImplTest {
     void testSortByAreaByAscendingInEachHouse() {
         System.out.println("\nAscending-Sort by area:");
         manager.sortByArea(manager.getList(), SortOrder.ASCENDING);
-        if (manager.getList().get(0).getArea() < manager.getList().get(1).getArea()) {
-            System.out.println("Sort is ascending!");
-        }
         manager.printListOfHouses("area");
         Assertions.assertEquals(3, manager.getList().size());
         Assertions.assertEquals(100, manager.getList().get(0).getArea());
@@ -59,9 +62,6 @@ class HouseManagerImplTest {
     void testSortByAreaByDescendingInEachHouse() {
         System.out.println("\nDescending-Sort by area:");
         manager.sortByArea(manager.getList(), SortOrder.DESCENDING);
-        if (manager.getList().get(0).getArea() > manager.getList().get(1).getArea()) {
-            System.out.println("Sort is descending!");
-        }
         manager.printListOfHouses("area");
         Assertions.assertEquals(3, manager.getList().size());
         Assertions.assertEquals(155, manager.getList().get(0).getArea());
@@ -108,13 +108,19 @@ class HouseManagerImplTest {
     @Test
     @DisplayName("Check exist enum LocatedNear")
     void testGetEnumLocatedNear() {
-        Assertions.assertFalse(LocatedNear.SCHOOL==LocatedNear.PARK);
+        Assertions.assertFalse(LocatedNear.SCHOOL == LocatedNear.PARK);
     }
 
     @Test
     @DisplayName("Check exist enum AvailableHouse")
     void testGetEnumAvailableHouse() {
-        Assertions.assertFalse(AvailableHouse.ONE_ROOM_APPARTMENT==AvailableHouse.FIVE_ROOM_MANSION);
+        Assertions.assertFalse(AvailableHouse.ONE_ROOM_APPARTMENT == AvailableHouse.FIVE_ROOM_MANSION);
+    }
+
+    @Test
+    @DisplayName("Check exist enum AvailableHouse")
+    void testGetEnumHeating() {
+        Assertions.assertFalse(Heating.ELECTRIC_BOILER == Heating.HEAT_PUMP);
     }
 
     @Test
@@ -136,7 +142,7 @@ class HouseManagerImplTest {
         list.add(new Apartment(100, 530400, 3, "Solomyanska, 20A", 2, "Odessa"));
         manager.setNewListOfHouses(list);
         manager.printListOfHouses("area");
-        Assertions.assertEquals(3,manager.getList().size());
+        Assertions.assertEquals(3, manager.getList().size());
     }
 
     @AfterAll
@@ -148,7 +154,7 @@ class HouseManagerImplTest {
         manager.printListOfHouses("area");
         manager.sortByArea(manager.getList(), SortOrder.DESCENDING);
         manager.printListOfHouses("area");
-        Assertions.assertEquals(0,manager.getList().size());
+        Assertions.assertEquals(0, manager.getList().size());
     }
 
     @AfterAll
@@ -160,7 +166,7 @@ class HouseManagerImplTest {
         manager.printListOfHouses("price");
         manager.sortByPrice(manager.getList(), SortOrder.DESCENDING);
         manager.printListOfHouses("price");
-        Assertions.assertEquals(0,manager.getList().size());
+        Assertions.assertEquals(0, manager.getList().size());
     }
 
 }

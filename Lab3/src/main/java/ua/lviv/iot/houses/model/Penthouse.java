@@ -14,4 +14,14 @@ public class Penthouse extends House {
     public void setTerrace(boolean terrace) {
         this.terrace = terrace;
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + "terrace" + ", ";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + this.terrace + ", ";
+    }
 }
