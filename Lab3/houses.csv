@@ -1,0 +1,9 @@
+area, price, rating, adress, numberOfRooms, city, waterSupply, floors
+155.0, 11465432, 5, Warsaw, 5, 6, Lviv, false, 0
+-------------------------------------------------------------------------
+area, price, rating, adress, numberOfRooms, city, terrace, 
+136.0, 2383150, 4, Charles Michelosh, 7, 4, Kiev, false, 
+-------------------------------------------------------------------------
+area, price, rating, adress, numberOfRooms, city, flour, 
+100.0, 530400, 3, Solomyanska, 20A, 2, Odessa, 0, 
+-------------------------------------------------------------------------

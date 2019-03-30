@@ -23,4 +23,14 @@ public class Mansion extends House {
     public void setFloors(int floors) {
         this.floors = floors;
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + "waterSupply" + ", " + "floors";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + this.waterSupply + ", " + this.floors;
+    }
 }
