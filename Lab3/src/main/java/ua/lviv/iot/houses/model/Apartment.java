@@ -14,14 +14,4 @@ public class Apartment extends House {
     public void setFlour(int flour) {
         this.flour = flour;
     }
-
-    @Override
-    public String getHeaders() {
-        return super.getHeaders() + "flour" + ", ";
-    }
-
-    @Override
-    public String toCSV() {
-        return super.toCSV() + this.flour + ", ";
-    }
 }
