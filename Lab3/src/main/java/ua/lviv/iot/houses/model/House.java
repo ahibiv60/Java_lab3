@@ -90,14 +90,4 @@ public class House {
     public void setAvailableHouse(AvailableHouse availableHouse) {
         this.availableHouse = availableHouse;
     }
-
-    public String getHeaders() {
-        return "area" + ", " + "price" + ", " + "rating" + ", " + "adress" + ", " + "numberOfRooms" + ", " + "city"
-                + ", ";
-    }
-
-    public String toCSV() {
-        return this.area + ", " + this.price + ", " + this.rating + ", " + this.adress + ", " + this.numberOfRooms
-                + ", " + this.city + ", ";
-    }
 }

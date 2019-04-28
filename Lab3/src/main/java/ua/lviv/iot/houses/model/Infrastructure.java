@@ -25,14 +25,4 @@ public class Infrastructure extends House {
     public void setParking(boolean parking) {
         this.parking = parking;
     }
-
-    @Override
-    public String getHeaders() {
-        return super.getHeaders() + "parking" + ", ";
-    }
-
-    @Override
-    public String toCSV() {
-        return super.toCSV() + this.parking + ", ";
-    }
 }
