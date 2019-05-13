@@ -10,13 +10,13 @@ import javax.persistence.Table;
 @Entity()
 @Table(name = "mansion")
 public class Mansion extends House {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(name = "city")
     private String city;
-    
+
     public long getId() {
         return id;
     }
@@ -24,41 +24,39 @@ public class Mansion extends House {
     public void setId(long id) {
         this.id = id;
     }
-    
+
     public String getCity() {
-        return city; 
+        return city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
-    
-    @Column(name = "water_supply")
-    private boolean waterSupply;
+
+    //private boolean waterSupply;
     @Column(name = "floors")
     private int floors;
-    
+
     public Mansion() {
         super();
     }
-    
-    public Mansion(String city, int floors, boolean waterSupply) {
+
+    public Mansion(String city, int floors) {
         this.city = city;
         this.floors = floors;
-        this.waterSupply = waterSupply;
     }
 
     public Mansion(double area, int price, int rating, String adress, int numberOfRooms, String city) {
         super(area, price, rating, adress, numberOfRooms, city);
     }
 
-    public boolean isWaterSupply() {
+    /*public boolean isWaterSupply() {
         return waterSupply;
     }
 
     public void setWaterSupply(boolean waterSupply) {
         this.waterSupply = waterSupply;
-    }
+    }*/
 
     public int getFloors() {
         return floors;
